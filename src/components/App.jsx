@@ -1,12 +1,21 @@
 import React from "react";
 
+var isDone = false;
+
+function strike() {
+  isDone = !isDone;
+}
+
+function unStrike() {
+  isDone = false;
+}
+
 function App() {
   return (
     <div>
-      <h1>Hello World!</h1>
-      <p>This is a simple template react app.</p>
-      <p>Feel free to modify it as you like.</p>
-      <p>Happy coding!</p>
+      <p style={isDone ? { textDecoration: "line-through" } : null}>Buy milk</p>
+      <button onClick={strike}>Change to strike through</button>
+      <button onClick={unStrike}>Change back</button>
     </div>
   );
 }
